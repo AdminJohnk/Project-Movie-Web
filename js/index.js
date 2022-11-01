@@ -60,9 +60,11 @@ const renderCarouselItem = (item, data_detail, count) => {
     }
 
     let span_list = '';
-    data_detail.genres.forEach((item) => {
-        span_list += `<span class='me-2'>${item.name}</span>`;
-    });
+    for(let i=0; i<data_detail.genres.length; i++){
+        if(i===4)
+            break;
+        span_list += `<span class='me-2'>${data_detail.genres[i].name}</span>`;
+    }
 
     return (`${tag}
         <div class="colCenter_carousel_child_cover"></div>
